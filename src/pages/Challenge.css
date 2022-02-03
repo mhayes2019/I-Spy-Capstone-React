@@ -1,0 +1,52 @@
+* {
+    background-color: #fcc438;
+}
+
+.body{
+    background-color: #fcc438;
+}
+
+.header{
+    display:flex;
+    justify-content: space-between;
+    background-color: #3a599b;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-right: 20px;
+}
+
+.home-button{
+background-color: antiquewhite;
+}
+
+.log-out-button{
+background-color: tomato;
+color: antiquewhite;
+width: 100px;
+padding-top: 20px;
+padding-bottom: 20px;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    background-color: antiquewhite;
+    width: 20%;
+    transform: rotate(-45deg) ;
+}
+
+.drop-down-space-wrapper{
+    display: flex;
+    justify-content: center;
+}
+
+.label{
+    padding-right: 20px;
+    background-color: antiquewhite;
+    font-weight: 700;
+}
+
+.friend-select{
+    background-color: antiquewhite;
+}

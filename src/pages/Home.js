@@ -1,13 +1,16 @@
-import React from "react";
+import logo from './logo.svg';
+import './App.css';
+import {LoginPage} from "./pages/Login"
+import {Home} from "./pages/Home"
 
-export class Home extends React.Component{
-    render() {
-        // using fragments (<>) to be able to hold more than one div
-        return(
-        <div>
-        <h1>I SPY</h1>
-        <button onClick={()=>console.log("I pushed the button")}>Push me to get to sending a friend challenge</button>
-        </div>
-        ) 
-    }
+function App() {
+  return (
+    <div className="App">
+      
+      {/* <LoginPage/>*/}
+      <Home/>
+    </div>
+  );
 }
+
+export default App;
