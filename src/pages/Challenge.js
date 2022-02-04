@@ -31,7 +31,12 @@ export const Challenge=({friends})=> {
               {options}
             </select>
             </div>
-            <button onClick={()=>console.log("I pushed the button")}>Push me to get to sending a friend challenge</button>
+            <div className ="input-text-box">
+            <input type="text" name="user_email" placeholder="Type A Chararistic Here" />
+            </div>
+            <div className ="start-game-button">
+            <button onClick={()=>console.log("I pushed the button")}>Eye Spy With My Little Eye Something That Is</button>
+            </div>
         </body> 
         </div>
         ) 

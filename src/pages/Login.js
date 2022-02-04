@@ -4,10 +4,15 @@ import { GoogleLogin } from 'react-google-login';
 export class LoginPage extends React.Component{
 
     responseGoogle=(response)=>{
+        
         console.log(response);
         console.log(response.profileObj);
+        
     }
     render() {
+        
+        console.log(this.responseGoogle)
+
         // using fragments (<>) to be able to hold more than one div
         return(
             <> <div> I Spy <x-search>{this.props.name}</x-search>!</div>

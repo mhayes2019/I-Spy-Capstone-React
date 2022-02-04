@@ -25,7 +25,7 @@ function App() {
   return (
     <div className="App">
       
-      {/* <LoginPage/>*/}
+      {/* <LoginPage/> */}
       <Challenge friends={friendNames}/>
     </div>
   );
