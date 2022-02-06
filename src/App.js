@@ -31,18 +31,7 @@ function App() {
   return (
     <div className="App">
     <Router>
-      <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/challenge">Challenge</Link>
-            </li>
-          </ul>
-        </nav>
-      </div>
+      
     <div>
       <Header/>
       <Routes>

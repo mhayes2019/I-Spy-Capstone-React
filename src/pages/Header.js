@@ -1,10 +1,16 @@
 import React from "react"
+import {Link} from "react-router-dom"
+
 
 //creating a component for navigation
 export const Header = () => {
   return(
     <nav>
-      I'm in header
+                  <header className="header">
+            <Link to="/">Home</Link>
+                <button className="log-out-button">Log Out</button>
+                
+            </header>
 
     </nav>
   )

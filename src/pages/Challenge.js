@@ -22,11 +22,7 @@ export const Challenge=({friends})=> {
 
         return(
         <div className="body">
-            <header className="header">
-              <Link className="home-button" to={"./Home.js"}>Home</Link>
-                <button className="log-out-button">Log Out</button>
-                
-            </header>
+            
         <body>   
             <h1>I SPY</h1>
             <div className="drop-down-space-wrapper">
@@ -38,8 +34,8 @@ export const Challenge=({friends})=> {
             <div className ="input-text-box">
             <input type="text" name="user_email" placeholder="Type A Chararistic Here" />
             </div>
-            <div className ="start-game-button">
-            <button onClick={()=>console.log("I pushed the button")}>Eye Spy With My Little Eye Something That Is</button>
+            <div className ="start-game-button-wrapper">
+            <button className="start-game-button"onClick={()=>console.log("I pushed the button")}>Eye Spy With My Little Eye Something That Is</button>
             </div>
         </body> 
         </div>
