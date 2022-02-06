@@ -1,16 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
-import {LoginPage} from "./pages/Login"
-import {Home} from "./pages/Home"
+import React from "react"
 
-function App() {
-  return (
-    <div className="App">
-      
-      {/* <LoginPage/>*/}
-      <Home/>
-    </div>
-  );
+//creating a component for navigation
+export const Header = () => {
+  return(
+    <nav>
+      I'm in header
+
+    </nav>
+  )
 }
 
-export default App;
+export default Header

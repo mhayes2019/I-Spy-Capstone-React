@@ -1,16 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
-import {LoginPage} from "./pages/Login"
-import {Home} from "./pages/Home"
+import React from "react"
 
-function App() {
-  return (
-    <div className="App">
-      
-      {/* <LoginPage/>*/}
-      <Home/>
-    </div>
-  );
+export const Home = ()=> {
+    return(
+        <div>
+            <button>Challenge A Friend</button>
+        </div>
+    )
 }
 
-export default App;
+export default Home

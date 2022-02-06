@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types"
 import './Challenge.css'
 // import Header from "./Header"
+import {Link} from "react-router-dom"
 
 export const Challenge=({friends})=> {
   console.log(friends)
@@ -15,11 +16,14 @@ export const Challenge=({friends})=> {
         options.push(<option value={name}>{name}</option>)
       }
       console.log(options)
+      const handleGoHome= () => {
+        console.log("handle go home clicked")
+      }
 
         return(
         <div className="body">
             <header className="header">
-              <button className="home-button">Home</button>
+              <Link className="home-button" to={"./Home.js"}>Home</Link>
                 <button className="log-out-button">Log Out</button>
                 
             </header>

@@ -2,7 +2,13 @@ import {React, useEffect, useState} from 'react';
 import axios from 'axios';
 import './App.css';
 // import {LoginPage} from "./pages/Login"
-import {Challenge} from "./pages/Challenge"
+import Challenge from "./pages/Challenge"
+import {BrowserRouter as Router, Route, Routes, Link} from 'react-router-dom'
+import Header from "./pages/Header"
+import Home from "./pages/Home"
+
+
+
 
 function App() {
   const[post,setPost]=useState([])
@@ -24,9 +30,32 @@ function App() {
   //
   return (
     <div className="App">
+    <Router>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/challenge">Challenge</Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    <div>
+      <Header/>
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/challenge" element={<Challenge friends={friendNames}/>}/>
+        </Routes>
+
+    </div>
+    </Router>
+    
       
       {/* <LoginPage/> */}
-      <Challenge friends={friendNames}/>
+      {/* <Challenge friends={friendNames}/> */}
     </div>
   );
 }
