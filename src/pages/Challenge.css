@@ -53,10 +53,9 @@ h1 {
 
 .start-game-button{
     background-color: antiquewhite;
-    padding-top: 50px;
+    padding-top: 25px;
 }
 
 .start-game-button-wrapper{
-    padding-top: 50px;
-    background-color: black;
+    padding-top: 100px;
 }

@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useCallback } from "react";
 import PropTypes from "prop-types"
 import './Challenge.css'
 // import Header from "./Header"
-import {Link} from "react-router-dom"
+import {useNavigate} from "react-router-dom"
 
 export const Challenge=({friends})=> {
   console.log(friends)
@@ -16,8 +16,17 @@ export const Challenge=({friends})=> {
         options.push(<option value={name}>{name}</option>)
       }
       console.log(options)
-      const handleGoHome= () => {
-        console.log("handle go home clicked")
+
+      const navigate= useNavigate();
+
+      const goHome = useCallback(() => navigate('/', {replace: true}), [navigate])
+
+      const handleCreateGame= () => {
+        console.log("handle create game clicked")
+        return goHome()
+        // useCallback(() => navigate('/', {replace: true}), [navigate])
+        // return <Link to="/">Home</Link>
+
       }
 
         return(
@@ -35,7 +44,9 @@ export const Challenge=({friends})=> {
             <input type="text" name="user_email" placeholder="Type A Chararistic Here" />
             </div>
             <div className ="start-game-button-wrapper">
-            <button className="start-game-button"onClick={()=>console.log("I pushed the button")}>Eye Spy With My Little Eye Something That Is</button>
+            <button className="start-game-button"onClick={handleCreateGame}>
+              Eye Spy With My Little Eye Something That Is
+            </button>
             </div>
         </body> 
         </div>
