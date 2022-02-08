@@ -1,11 +1,14 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useState } from "react";
 import PropTypes from "prop-types"
 import './Challenge.css'
 // import Header from "./Header"
 import {useNavigate} from "react-router-dom"
+import axios from 'axios';
 
 export const Challenge=({friends})=> {
   console.log(friends)
+  const[post,setPost]=useState([])
+
   // const names=["Riley","Melinda","Koa","Kai"]
       
   
@@ -21,12 +24,24 @@ export const Challenge=({friends})=> {
 
       const goHome = useCallback(() => navigate('/', {replace: true}), [navigate])
 
+      // change players to game when ready
+      const URL="https://i-spy-be.herokuapp.com/players/game"
+      const requestBody={
+        // instead of putting adding new name, i need to put 
+        challenger_id: 1, 
+        responder_id: 3
+      }
       const handleCreateGame= () => {
+        axios.post(URL, requestBody).then((response)=>{
+          setPost(response.data)
+        })
+        console.log(post)
         console.log("handle create game clicked")
         return goHome()
-        // useCallback(() => navigate('/', {replace: true}), [navigate])
-        // return <Link to="/">Home</Link>
+      }
 
+      const handleOnChangeFriends = (option) => {
+        console.log("handleOnChangeFriends clicked", option.value)
       }
 
         return(
@@ -36,7 +51,7 @@ export const Challenge=({friends})=> {
             <h1>I SPY</h1>
             <div className="drop-down-space-wrapper">
             <label className="label">find a friend</label>
-            <select className ="friend-select" name="find a friend" id="selectName">
+            <select className ="friend-select" name="find a friend" id="selectName" onChange={handleOnChangeFriends}>
               {options}
             </select>
             </div>

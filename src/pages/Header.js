@@ -8,7 +8,8 @@ export const Header = () => {
     <nav>
                   <header className="header">
             <Link to="/">Home</Link>
-                <button className="log-out-button">Log Out</button>
+            <Link to="/login">Logout</Link>
+            
                 
             </header>
 

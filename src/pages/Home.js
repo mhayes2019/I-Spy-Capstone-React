@@ -6,7 +6,7 @@ export const Home = ()=> {
         <div>
         <h1>I Spy</h1>
     <div className="home-wrapper">
-        <Link className="challenge-button" to="/challenge">Challenge A Friend</Link>
+        <Link className="home-button" to="/challenge">Challenge A Friend</Link>
     </div>
     </div>
     )

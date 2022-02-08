@@ -1,7 +1,7 @@
 import {React, useEffect, useState} from 'react';
 import axios from 'axios';
 import './App.css';
-// import {LoginPage} from "./pages/Login"
+import {LoginPage} from "./pages/Login"
 import Challenge from "./pages/Challenge"
 import {BrowserRouter as Router, Route, Routes, Link} from 'react-router-dom'
 import Header from "./pages/Header"
@@ -37,6 +37,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/challenge" element={<Challenge friends={friendNames}/>}/>
+        <Route path="/login" element={<LoginPage/>} />
         </Routes>
 
     </div>
