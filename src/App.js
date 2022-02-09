@@ -6,6 +6,7 @@ import Challenge from "./pages/Challenge"
 import {BrowserRouter as Router, Route, Routes, Link} from 'react-router-dom'
 import Header from "./pages/Header"
 import Home from "./pages/Home"
+import Games from "./pages/Games"
 
 
 
@@ -38,6 +39,7 @@ function App() {
         <Route path="/" element={<Home/>}/>
         <Route path="/challenge" element={<Challenge friends={friendNames}/>}/>
         <Route path="/login" element={<LoginPage/>} />
+        <Route path="/games" element={<Games games={["hello"]}/>}/>
         </Routes>
 
     </div>
