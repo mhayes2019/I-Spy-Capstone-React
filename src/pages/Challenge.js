@@ -25,16 +25,22 @@ export const Challenge=({friends})=> {
       const goHome = useCallback(() => navigate('/', {replace: true}), [navigate])
 
       // change players to game when ready
-      const URL="https://i-spy-be.herokuapp.com/game"
+      const URL="http://i-spy-be.herokuapp.com/players/game"
       const requestBody={
         // instead of putting adding new name, i need to put 
         challenger_id: 1, 
-        responder_id: 3
+        responder_id: 3,
+        characteristic: "show me something with bears"
       }
       const handleCreateGame= () => {
-        axios.post(URL, requestBody).then((response)=>{
+        console.log("hi")
+        console.log(URL)
+        axios.post(URL,requestBody).then((response)=>{
           setPost(response.data)
         })
+        // axios.post({url:URL, data:requestBody, withCredentials:false}).then((response)=>{
+        //   setPost(response.data)
+        // })
         console.log(post)
         console.log("handle create game clicked")
         return goHome()

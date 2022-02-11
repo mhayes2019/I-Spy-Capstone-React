@@ -1,0 +1,53 @@
+.upload-body{
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+    justify-content: center;
+    padding-bottom: 100px;
+}
+
+.header-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.image-stuff {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.challenger {
+    display: flex;
+    justify-content: center;
+    width: 43%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: antiquewhite;
+}
+
+.upload-photo-wrapper{
+    background-color: #3a599b;
+    padding-bottom: 100px;
+    padding-top: 39px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.image {
+    width: 25%;
+    height: 25%;
+}
+.characteristic{
+    background-color: antiquewhite;
+    padding-left: 62px;
+    padding-right: 70px;
+}
+
+.yellow {
+    background-color: #fcc438;
+    padding-top: 30px;
+}

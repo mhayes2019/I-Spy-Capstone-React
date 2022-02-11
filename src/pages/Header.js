@@ -8,7 +8,9 @@ export const Header = () => {
     <nav>
                   <header className="header">
             <Link to="/">Home</Link>
+            <Link to="/games">Games</Link>
             <Link to="/login">Logout</Link>
+            
             
                 
             </header>
