@@ -2,9 +2,9 @@ import React, { useCallback, useState, useEffect } from "react";
 import PropTypes from "prop-types"
 import './Challenge.css'
 // import Header from "./Header"
-import {useNavigate} from "react-router-dom"
-import axios from 'axios';
-import { getDefaultNormalizer } from "@testing-library/react";
+// import {useNavigate} from "react-router-dom"
+// import axios from 'axios';
+// import { getDefaultNormalizer } from "@testing-library/react";
 import {Link} from "react-router-dom"
 
 
@@ -12,9 +12,10 @@ export const Games=({games})=>{
   const challengers = games[0]
   let namesThing = []
 
-  
+
+
   if(challengers !== undefined){
-    const challengerArrays = challengers.challenger
+    const challengerArrays = challengers.responder
 
     for(let i=0; i<challengerArrays.length; i++){
       const whatIsThis = challengerArrays[i];
@@ -29,6 +30,8 @@ export const Games=({games})=>{
         {challenger} has challenged you to a game of ISpy with question {challengerQuestion} <br/><br/></Link>)
     }
   }
+
+  console.log({namesThing})
  
 
 

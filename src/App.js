@@ -13,8 +13,7 @@ function App() {
   // state stuff
   const[post,setPost]=useState([])
   const[gamesPost, setGamesPost] =useState([])
-  const [updateState, setUpdateState] = useState();
-  let friendNames = ['blah']
+  const[friendNames, setFriendNames] = useState([])
 
   // current user stuff
   const currentUserName = localStorage.getItem('currentUserName');
@@ -25,9 +24,10 @@ function App() {
 
     const baseurl="https://i-spy-be.herokuapp.com/players"
 
+
     let currentUserId;
 
-
+    
     axios.get(baseurl).then((response)=>{
       setPost(response.data)
       const friendNames = post.map(a => a.name)
@@ -38,38 +38,40 @@ function App() {
       console.log(currentUserId)
     })
 
-    console.log(friendNames)
-
 
   const userObject = post;
+  console.log('what', post)
   let currentId;
-
   // first loop thru user object use word key
   // second, while in the loop, if key === currentFirstName
   // in that conditional,  currentId = item.id
   // after the loop is closed, do a console log for currentId to see if it comes in with a number 2
   console.log("userObject in app", userObject)
+  const friendsArray = []
   userObject.forEach(function (arrayItem) {
-    console.log("in for loop", arrayItem.name);
+    
     if(currentFirstName === arrayItem.name){
-      console.log("YES")
+      console.log(arrayItem.name)
+      friendsArray.push(arrayItem.name)
+      console.log("In the loop", friendsArray)
       currentUserId = arrayItem.id
     }
 });
 
 
 console.log({currentUserId})
-
-
+console.log('works', friendNames)
  const gamesUrl=`http://i-spy-be.herokuapp.com/games/2`
-   axios.get(gamesUrl).then((response)=>{
+
+  axios.get(gamesUrl).then((response)=>{
       setGamesPost(response.data)
     })
     const gamesArray = gamesPost[0]
     if(gamesArray !== undefined){
-      console.log(gamesArray.challenger[0].challenger_id)
+      // console.log(gamesArray.challenger[0].challenger_id)
     }
   },[])
+
 
 
   
