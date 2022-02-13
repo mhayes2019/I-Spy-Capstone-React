@@ -23,19 +23,22 @@ function App() {
   useEffect(()=>{
 
     const baseurl="https://i-spy-be.herokuapp.com/players"
-
-
     let currentUserId;
 
-    
     axios.get(baseurl).then((response)=>{
       setPost(response.data)
       const friendNames = post.map(a => a.name)
       const friendList = { ...friendNames }
-      console.log("here",friendList)
+      console.log("here friendList",friendList)
       const friendObject =Object.keys(friendList).find(key => friendList[key] === currentFirstName);
       currentUserId = parseInt(friendObject) + 1;
-      console.log(currentUserId)
+
+      const array = Object.keys(friendList)
+    .map(function(key) {
+        return friendList[key];
+    });
+      setFriendNames(array)
+      
     })
 
 
@@ -60,7 +63,8 @@ function App() {
 
 
 console.log({currentUserId})
-console.log('works', friendNames)
+console.log('friendNames in app', friendNames)
+
  const gamesUrl=`http://i-spy-be.herokuapp.com/games/2`
 
   axios.get(gamesUrl).then((response)=>{

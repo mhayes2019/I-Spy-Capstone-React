@@ -7,8 +7,7 @@ import axios from 'axios';
 
 export const Challenge=({friends})=> {
   const[post,setPost]=useState([])
-
-  // const names=["Riley","Melinda","Koa","Kai"]
+  console.log({friends})
       
   
   let options = []
@@ -17,6 +16,7 @@ export const Challenge=({friends})=> {
         const name = friends[i];
         options.push(<option value={name}>{name}</option>)
       }
+      
 
       const navigate= useNavigate();
 
