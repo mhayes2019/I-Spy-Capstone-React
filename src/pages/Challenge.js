@@ -6,7 +6,6 @@ import {useNavigate} from "react-router-dom"
 import axios from 'axios';
 
 export const Challenge=({friends})=> {
-  console.log(friends)
   const[post,setPost]=useState([])
 
   // const names=["Riley","Melinda","Koa","Kai"]
@@ -18,7 +17,6 @@ export const Challenge=({friends})=> {
         const name = friends[i];
         options.push(<option value={name}>{name}</option>)
       }
-      console.log(options)
 
       const navigate= useNavigate();
 
@@ -33,16 +31,13 @@ export const Challenge=({friends})=> {
         characteristic: "show me something with bears"
       }
       const handleCreateGame= () => {
-        console.log("hi")
-        console.log(URL)
         axios.post(URL,requestBody).then((response)=>{
           setPost(response.data)
         })
         // axios.post({url:URL, data:requestBody, withCredentials:false}).then((response)=>{
         //   setPost(response.data)
         // })
-        console.log(post)
-        console.log("handle create game clicked")
+
         return goHome()
       }
 

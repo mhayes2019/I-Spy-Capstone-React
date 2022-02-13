@@ -20,6 +20,7 @@ export const LoginPage = () => {
         // for now, storing this in local storage which saves stuff in the browser
         localStorage.setItem('currentUserName', response.profileObj.name)
         localStorage.setItem('currentUserEmail', response.profileObj.email)
+        localStorage.setItem('currentFirstName', response.profileObj.givenName)
 
         
         // after stored, redirect to home page

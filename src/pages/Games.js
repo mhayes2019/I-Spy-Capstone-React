@@ -4,39 +4,46 @@ import './Challenge.css'
 // import Header from "./Header"
 import {useNavigate} from "react-router-dom"
 import axios from 'axios';
+import { getDefaultNormalizer } from "@testing-library/react";
+import {Link} from "react-router-dom"
+
 
 export const Games=({games})=>{
+  const challengers = games[0]
+  let namesThing = []
 
-const[currentGames,setCurrentGames]=useState(games)
-const[post,setPost]=useState([])
-
-useEffect(()=>{
-    const baseurl="https://i-spy-be.herokuapp.com/games/1"
-    axios.get(baseurl).then((response)=>{
-      setPost(response.data)
-    })
-  },[])
-  console.log(post)
- 
   
-//   challenger_id: 1
-// challenger_name: "Diana"
-// game_id: 1
-// responder_name: "Melinda"
-// text_challenger: null
-const { challenger_id, challenger_name, game_id, responder_name, text_challenger} = post
-console.log({ challenger_id, challenger_name, game_id, responder_name, text_challenger})
+  if(challengers !== undefined){
+    const challengerArrays = challengers.challenger
 
-return(
-    <div className="body">
-        
-    <body>   
-        <h2>Your Games</h2>
-        <p>{currentGames}</p>
+    for(let i=0; i<challengerArrays.length; i++){
+      const whatIsThis = challengerArrays[i];
+      const challenger = whatIsThis.responder_name
+      const challengerQuestion = whatIsThis.characteristic
+      console.log(whatIsThis)
+      
 
-    </body> 
-    </div>
-    ) 
+      namesThing.push(<Link to={"/upload"}
+        state={{gameId: whatIsThis}}
+      >
+        {challenger} has challenged you to a game of ISpy with question {challengerQuestion} <br/><br/></Link>)
+    }
+  }
+ 
+
+
+  return(
+      <div className="body">
+          <h2>Your Games</h2>
+          <div className="challenger-wrapper">
+            <div>
+              You have challenges ready to play
+            </div>
+            <div>{namesThing} </div>
+         
+          </div>
+      </div>
+      ) 
 }
 
 export default Games

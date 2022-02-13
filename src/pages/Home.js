@@ -5,9 +5,8 @@ export const Home = ()=> {
 
     const currentUserName = localStorage.getItem('currentUserName');
     const currentUserEmail = localStorage.getItem('currentUserEmail');
+    const currentFirstName = localStorage.getItem('currentFirstName');
 
-
-    console.log({ currentUserName, currentUserEmail, })
     return(
         <div>
         <h1>I Spy</h1>
