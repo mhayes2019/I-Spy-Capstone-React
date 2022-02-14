@@ -77,10 +77,10 @@ export const Upload=({games})=>{
   const onSendButtonClick = () => {
     
   console.log("clicked for sending bear")
-  const sendImageUrl = `http://i-spy-be.herokuapp.com/games/3/2/image`
+  const sendImageUrl = `https://i-spy-be.herokuapp.com/games/1/4/image`
   
-  const response = {"image": image}
-  const uploadImage = async () => {axios.put(response).then((ev )=>{
+  const data = {"image": imageUrl}
+  const uploadImage = async () => {axios.put( sendImageUrl, data).then((ev )=>{
     console.log(ev)
   })}
   uploadImage()
