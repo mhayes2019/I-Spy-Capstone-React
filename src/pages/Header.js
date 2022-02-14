@@ -10,7 +10,7 @@ export const Header = () => {
       <div className="header">
             <Link className="home-button" to="/">Home</Link>
             <Link className="games-button" to="/games">Games</Link>
-            <Link className="logout-buton"to="/login">Logout</Link>  
+            <Link className="logout-button"to="/login">Logout</Link>  
         </div>
 
     </nav>

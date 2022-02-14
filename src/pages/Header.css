@@ -1,7 +1,7 @@
 
 .header{
     display:flex;
-    justify-content: space-between;
+    justify-content: space-around;
     background-color: #3a599b;
     width: 100%;
     padding: 20px;
@@ -17,5 +17,29 @@
 }
 
 .home-button:hover {
+    background-color: #D7C0A1;
+  }
+
+  .games-button {
+    border: 2px solid black;
+    color: black;
+    background-color: antiquewhite;
+    padding: 5px 8px;
+    text-decoration: none;
+}
+
+.games-button:hover {
+    background-color: #D7C0A1;
+  }
+
+  .logout-button {
+    border: 2px solid black;
+    color: black;
+    background-color: antiquewhite;
+    padding: 5px 8px;
+    text-decoration: none;
+}
+
+.logout-button:hover {
     background-color: #D7C0A1;
   }
