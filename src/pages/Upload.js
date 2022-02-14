@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import './Upload.css'
-import {useLocation, Link} from "react-router-dom"
+import {useLocation, useNavigate} from "react-router-dom"
 import axios from 'axios';
 
 export const Upload=({games})=>{
@@ -65,26 +65,29 @@ export const Upload=({games})=>{
     setImage(event.target.files[0])
   }
 
-  let tryingThis
+  let imageUrl
   if (image.name) {
-    tryingThis = URL.createObjectURL(image)
+    imageUrl = URL.createObjectURL(image)
   }
   console.log({image})
  // send tryingThis as the response
  
+ const navigate= useNavigate();
+ const goHome = useCallback(() => navigate('/', {replace: true}), [navigate])
   const onSendButtonClick = () => {
     
   console.log("clicked for sending bear")
   const sendImageUrl = `http://i-spy-be.herokuapp.com/games/3/2/image`
   
-  const response = {"image": tryingThis}
+  const response = {"image": image}
   const uploadImage = async () => {axios.put(response).then((ev )=>{
     console.log(ev)
   })}
   uploadImage()
   // then reroute
+  goHome();
 
-  
+
 
 
 
@@ -100,7 +103,7 @@ export const Upload=({games})=>{
           <div className="yellow"></div>
           <div className="image-stuff">
           <label>Upload your picture</label>
-          <img className='image' alt="uploaded submission"src={tryingThis}></img>
+          <img className='image' alt="uploaded submission"src={imageUrl}></img>
           <input type="file" onChange={fileSelectedHandler}></input>
           <div className="yellow"></div>
           <button className="send-button" onClick={onSendButtonClick}>Send</button>

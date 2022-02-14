@@ -18,7 +18,6 @@ export const Challenge=({friends})=> {
 
 
       const navigate= useNavigate();
-
       const goHome = useCallback(() => navigate('/', {replace: true}), [navigate])
 
       // change players to game when ready

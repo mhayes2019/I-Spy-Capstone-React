@@ -77,7 +77,6 @@ const postGames = async () => {axios.get(gamesUrl).then((response)=>{
   getPlayers()
   postGames()
 
- 
   },[])
 
   useEffect(() => {
