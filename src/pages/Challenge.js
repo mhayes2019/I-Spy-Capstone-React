@@ -8,7 +8,6 @@ import axios from 'axios';
 export const Challenge=({friends})=> {
   const[post,setPost]=useState([])
   console.log({friends})
-      
   
   let options = []
       // for loop through list of name
@@ -16,7 +15,7 @@ export const Challenge=({friends})=> {
         const name = friends[i];
         options.push(<option value={name}>{name}</option>)
       }
-      
+
 
       const navigate= useNavigate();
 
@@ -59,6 +58,7 @@ export const Challenge=({friends})=> {
             <div className ="input-text-box">
             <input type="text" name="user_email" placeholder="Type A Chararistic Here" />
             </div>
+
             <div className ="start-game-button-wrapper">
             <button className="start-game-button"onClick={handleCreateGame}>
               Eye Spy With My Little Eye Something That Is

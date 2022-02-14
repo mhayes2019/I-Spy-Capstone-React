@@ -12,14 +12,14 @@ export const Games=({games})=>{
   const challengers = games[0]
   let namesThing = []
 
-
-
   if(challengers !== undefined){
     const challengerArrays = challengers.responder
+    console.log(challengerArrays)
+    console.log(challengers)
 
     for(let i=0; i<challengerArrays.length; i++){
       const whatIsThis = challengerArrays[i];
-      const challenger = whatIsThis.responder_name
+      const challenger = whatIsThis.challenger_name
       const challengerQuestion = whatIsThis.characteristic
       console.log(whatIsThis)
       

@@ -1,4 +1,4 @@
-import {React, useEffect, useState} from 'react';
+import {React, useEffect, useState, useCallback} from 'react';
 import axios from 'axios';
 import './App.css';
 import {LoginPage} from "./pages/Login"
@@ -14,7 +14,8 @@ function App() {
   const[post,setPost]=useState([])
   const[gamesPost, setGamesPost] =useState([])
   const[friendNames, setFriendNames] = useState([])
-
+  const [, updateState] = useState();
+  const forceUpdate = useCallback(() => updateState({}), []);
   // current user stuff
   const currentUserName = localStorage.getItem('currentUserName');
   const currentUserEmail = localStorage.getItem('currentUserEmail');
@@ -25,7 +26,20 @@ function App() {
     const baseurl="https://i-spy-be.herokuapp.com/players"
     let currentUserId;
 
-    axios.get(baseurl).then((response)=>{
+    // const [info, setInfo] = useState();
+    // console.log(info);
+
+    // useEffect(() => {
+    //     const getUsers = async () => {
+    //         const res = await axios('https://api.mocki.io/v1/b043df5a');
+    //         console.log(res.data);
+    //         setInfo(res.data);
+    //     };
+
+    //     getUsers();
+    // }, []);
+
+    const getPlayers = async () => {axios.get(baseurl).then((response)=>{
       setPost(response.data)
       const friendNames = post.map(a => a.name)
       const friendList = { ...friendNames }
@@ -39,8 +53,7 @@ function App() {
     });
       setFriendNames(array)
       
-    })
-
+    })}
 
   const userObject = post;
   console.log('what', post)
@@ -49,7 +62,6 @@ function App() {
   // second, while in the loop, if key === currentFirstName
   // in that conditional,  currentId = item.id
   // after the loop is closed, do a console log for currentId to see if it comes in with a number 2
-  console.log("userObject in app", userObject)
   const friendsArray = []
   userObject.forEach(function (arrayItem) {
     
@@ -61,24 +73,25 @@ function App() {
     }
 });
 
+const gamesUrl=`http://i-spy-be.herokuapp.com/games/2`
 
-console.log({currentUserId})
-console.log('friendNames in app', friendNames)
+const postGames = async () => {axios.get(gamesUrl).then((response)=>{
+    setGamesPost(response.data)
+  })}
 
- const gamesUrl=`http://i-spy-be.herokuapp.com/games/2`
+  console.log({gamesPost})
 
-  axios.get(gamesUrl).then((response)=>{
-      setGamesPost(response.data)
-    })
-    const gamesArray = gamesPost[0]
-    if(gamesArray !== undefined){
-      // console.log(gamesArray.challenger[0].challenger_id)
-    }
+  getPlayers()
+  postGames()
+
+ 
   },[])
 
+  useEffect(() => {
+     const oneTime = () => forceUpdate();
+     oneTime()
 
-
-  
+  }, [])
   return (
     <div className="App">
     <Router>
@@ -89,7 +102,6 @@ console.log('friendNames in app', friendNames)
         <Route path="/" element={<Home/>}/>
         <Route path="/challenge" element={<Challenge friends={friendNames}/>}/>
         <Route path="/login" element={<LoginPage/>} />
-
         <Route path="/games" element={<Games games={gamesPost}/>}/>
 
         <Route path="/upload" element={<Upload games={gamesPost}/> }/>

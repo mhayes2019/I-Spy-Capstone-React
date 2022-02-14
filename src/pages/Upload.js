@@ -22,7 +22,7 @@ export const Upload=({games})=>{
   if(location !== undefined){
     game_id = location.state.gameId.game_id
     characteristic = location.state.gameId.characteristic
-    responder = location.state.gameId.responder_name
+    responder = location.state.gameId.challenger_name
 
     console.log({game_id, characteristic, responder})
   }
