@@ -1,10 +1,5 @@
-import React, { useCallback, useState, useEffect } from "react";
-import PropTypes from "prop-types"
-import './Challenge.css'
-// import Header from "./Header"
-// import {useNavigate} from "react-router-dom"
-// import axios from 'axios';
-// import { getDefaultNormalizer } from "@testing-library/react";
+import React from "react";
+import './Games.css'
 import {Link} from "react-router-dom"
 
 
@@ -24,10 +19,10 @@ export const Games=({games})=>{
       console.log(whatIsThis)
       
 
-      namesThing.push(<Link to={"/upload"}
+      namesThing.push(<Link className="game-link" to={"/upload"}
         state={{gameId: whatIsThis}}
       >
-        {challenger} has challenged you to a game of ISpy with question {challengerQuestion} <br/><br/></Link>)
+        {challenger} has challenged you to a game of ISpy with question {challengerQuestion}</Link>)
     }
   }
 
@@ -36,16 +31,14 @@ export const Games=({games})=>{
 
 
   return(
-      <div className="body">
-          <h2>Your Games</h2>
           <div className="challenger-wrapper">
-            <div>
+            <div className="yellow"></div>
+            <div className="games-header">
               You have challenges ready to play
             </div>
-            <div>{namesThing} </div>
-         
+            <div className="yellow"></div>
+            <div className="games-link-wrapper">{namesThing} </div>
           </div>
-      </div>
       ) 
 }
 

@@ -21,6 +21,7 @@ function App() {
   const currentUserEmail = localStorage.getItem('currentUserEmail');
   const currentFirstName = localStorage.getItem('currentFirstName');
 
+
   useEffect(()=>{
 
     const baseurl="https://i-spy-be.herokuapp.com/players"
@@ -66,6 +67,7 @@ function App() {
 localStorage.setItem('currentUserChallengeId', currentUserId)
 const gamesUrl=`http://i-spy-be.herokuapp.com/games/${currentUserId}`
 
+
 const postGames = async () => {axios.get(gamesUrl).then((response)=>{
     setGamesPost(response.data)
   })}
@@ -87,7 +89,7 @@ const postGames = async () => {axios.get(gamesUrl).then((response)=>{
     <div className="App">
     <Router>
       
-    <div>
+    <div className="app-body">
       <Header/>
       <Routes>
         <Route path="/" element={<Home/>}/>

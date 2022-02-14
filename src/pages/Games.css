@@ -1,0 +1,39 @@
+.games-body{
+    display:flex;
+    flex-direction: column;
+    width: 75%;
+
+}
+
+.challenger-wrapper {
+    display: flex;
+    flex-direction: column;
+    /* width: 75%; */
+    justify-content: center;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.games-header {
+    background-color: antiquewhite;
+    font-size: x-large;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.games-link-wrapper {
+    display: flex;
+    flex-direction: column;
+
+}
+.game-link {
+    color: black;
+    background-color: antiquewhite;
+    padding: 5px 8px;
+    text-decoration: none;
+    overflow-wrap: break-word;
+}
+
+.game-link:hover {
+    background-color: #D7C0A1;
+  }
