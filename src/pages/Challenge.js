@@ -21,7 +21,7 @@ export const Challenge=({friends})=> {
       const goHome = useCallback(() => navigate('/', {replace: true}), [navigate])
 
       // change players to game when ready
-      const URL="http://i-spy-be.herokuapp.com/players/game"
+      const URL="https://i-spy-be.herokuapp.com/players/game"
       const requestBody={
         // instead of putting adding new name, i need to put 
         challenger_id: 1, 

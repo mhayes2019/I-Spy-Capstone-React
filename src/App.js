@@ -9,10 +9,11 @@ import Home from "./pages/Home"
 import Games from "./pages/Games"
 import Upload from "./pages/Upload"
 
+
 function App() {
   // state stuff
   const[post,setPost]=useState([])
-  const[gamesPost, setGamesPost] =useState([])
+  const[gamesPost, setGamesPost] = useState([])
   const[friendNames, setFriendNames] = useState([])
   const [, updateState] = useState();
   const forceUpdate = useCallback(() => updateState({}), []);
@@ -77,7 +78,7 @@ const postGames = async () => {axios.get(gamesUrl).then((response)=>{
   getPlayers()
   postGames()
 
-  },[])
+  },[]);
 
   useEffect(() => {
      const oneTime = () => forceUpdate();
@@ -87,7 +88,6 @@ const postGames = async () => {axios.get(gamesUrl).then((response)=>{
   return (
     <div className="App">
     <Router>
-      
     <div className="app-body">
       <Header/>
       <Routes>

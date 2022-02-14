@@ -27,7 +27,7 @@ export const Upload=({games})=>{
   useEffect(()=>{
 
   
-  const baseurl=`http://i-spy-be.herokuapp.com/games/${userId}`
+  const baseurl=`https://i-spy-be.herokuapp.com/games/${userId}`
 
   // prob needs async/await to make sure call happens then render page
   axios.get(baseurl).then((response)=>{

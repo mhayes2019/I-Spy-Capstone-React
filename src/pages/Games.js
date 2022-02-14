@@ -5,7 +5,7 @@ import {Link} from "react-router-dom"
 
 export const Games=({games})=>{
   const challengers = games[0]
-  let namesThing = []
+  const namesThing = [];
 
   if(challengers !== undefined){
     const challengerArrays = challengers.responder
@@ -19,16 +19,14 @@ export const Games=({games})=>{
       console.log(whatIsThis)
       
 
-      namesThing.push(<Link className="game-link" to={"/upload"}
+      namesThing.push(<Link key={whatIsThis.game_id} className="game-link" to={"/upload"}
         state={{gameId: whatIsThis}}
       >
-        {challenger} has challenged you to a game of ISpy with question {challengerQuestion}</Link>)
+        {challenger} says I Spy with my little eye something that is {challengerQuestion}</Link>)
     }
   }
 
-  console.log({namesThing})
- 
-
+  console.log({namesThing});
 
   return(
           <div className="challenger-wrapper">
