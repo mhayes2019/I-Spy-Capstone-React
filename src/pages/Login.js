@@ -28,7 +28,7 @@ export const LoginPage = () => {
             onSuccess={successLogin}
             onFailure={responseGoogle}
             cookiePolicy={'single_host_origin'}
-            redirectUrl={"www.cats.com"}
+            redirectUrl={"https://i-spy-capstone.herokuapp.com"}
                     
         /> 
  </div>
