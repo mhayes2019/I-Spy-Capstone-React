@@ -26,18 +26,10 @@ function App() {
     const baseurl="https://i-spy-be.herokuapp.com/players"
     let currentUserId;
 
+
     // const [info, setInfo] = useState();
     // console.log(info);
 
-    // useEffect(() => {
-    //     const getUsers = async () => {
-    //         const res = await axios('https://api.mocki.io/v1/b043df5a');
-    //         console.log(res.data);
-    //         setInfo(res.data);
-    //     };
-
-    //     getUsers();
-    // }, []);
 
     const getPlayers = async () => {axios.get(baseurl).then((response)=>{
       setPost(response.data)
@@ -56,24 +48,23 @@ function App() {
     })}
 
   const userObject = post;
-  console.log('what', post)
-  let currentId;
-  // first loop thru user object use word key
-  // second, while in the loop, if key === currentFirstName
-  // in that conditional,  currentId = item.id
-  // after the loop is closed, do a console log for currentId to see if it comes in with a number 2
+
+  
   const friendsArray = []
   userObject.forEach(function (arrayItem) {
-    
+    // this is where it's checking the current first name of user against the name coming in from google login
     if(currentFirstName === arrayItem.name){
       console.log(arrayItem.name)
       friendsArray.push(arrayItem.name)
       console.log("In the loop", friendsArray)
       currentUserId = arrayItem.id
+
+
     }
 });
 
-const gamesUrl=`http://i-spy-be.herokuapp.com/games/2`
+localStorage.setItem('currentUserChallengeId', currentUserId)
+const gamesUrl=`http://i-spy-be.herokuapp.com/games/${currentUserId}`
 
 const postGames = async () => {axios.get(gamesUrl).then((response)=>{
     setGamesPost(response.data)

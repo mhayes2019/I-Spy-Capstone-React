@@ -14,16 +14,9 @@ export const LoginPage = () => {
 
     const successLogin = (response) => {
         console.log("success", response.profileObj)
-
-        // you should maybe probably make an call here
-        // either if email exists in db, then good if not, add email to db
-        // for now, storing this in local storage which saves stuff in the browser
         localStorage.setItem('currentUserName', response.profileObj.name)
         localStorage.setItem('currentUserEmail', response.profileObj.email)
         localStorage.setItem('currentFirstName', response.profileObj.givenName)
-
-        
-        // after stored, redirect to home page
         navigate('/');
     }
 

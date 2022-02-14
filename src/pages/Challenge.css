@@ -6,16 +6,6 @@
     background-color: #fcc438;
 }
 
-.header{
-    display:flex;
-    justify-content: space-between;
-    background-color: #3a599b;
-    width: 100%;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    margin-right: 20px;
-}
-
 .home-button{
 background-color: antiquewhite;
 }

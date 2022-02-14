@@ -1,19 +1,17 @@
 import React from "react"
 import {Link} from "react-router-dom"
+import "./Header.css"
 
 
 //creating a component for navigation
 export const Header = () => {
   return(
     <nav>
-                  <header className="header">
-            <Link to="/">Home</Link>
-            <Link to="/games">Games</Link>
-            <Link to="/login">Logout</Link>
-            
-            
-                
-            </header>
+      <div className="header">
+            <Link className="home-button" to="/">Home</Link>
+            <Link className="games-button" to="/games">Games</Link>
+            <Link className="logout-buton"to="/login">Logout</Link>  
+        </div>
 
     </nav>
   )

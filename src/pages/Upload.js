@@ -1,24 +1,20 @@
-import React, { useCallback, useState, useEffect } from "react";
-import PropTypes from "prop-types"
+import React, { useState, useEffect } from "react";
 import './Upload.css'
-// import Header from "./Header"
 import {useLocation, Link} from "react-router-dom"
 import axios from 'axios';
 
 export const Upload=({games})=>{
   // state stuff
-  const[image,setImage] = useState("")
-  const[post,setPost] = useState("")
+  const[image, setImage] = useState("")
+  const[post, setPost] = useState("")
   const[currentUserId, setCurrentUserId] = useState("")
-  // const[gameId, setGameId] = useState("")
-  // const[gameQuestion, setGameQuestion] = useState("")
 
-  // constants and stuff to find current user
   const location = useLocation()
   console.log(location.state.gameId)
   let characteristic;
   let game_id;
   let responder;
+  const userId = localStorage.getItem('currentUserChallengeId');
   if(location !== undefined){
     game_id = location.state.gameId.game_id
     characteristic = location.state.gameId.characteristic
@@ -26,11 +22,14 @@ export const Upload=({games})=>{
 
     console.log({game_id, characteristic, responder})
   }
- 
-
+  
   // before component loads
   useEffect(()=>{
-  const baseurl="http://i-spy-be.herokuapp.com/games/2"
+
+  
+  const baseurl=`http://i-spy-be.herokuapp.com/games/${userId}`
+
+  // prob needs async/await to make sure call happens then render page
   axios.get(baseurl).then((response)=>{
     setPost(response.data)
   })
@@ -73,7 +72,23 @@ export const Upload=({games})=>{
   console.log({image})
  // send tryingThis as the response
  
+  const onSendButtonClick = () => {
+    
+  console.log("clicked for sending bear")
+  const sendImageUrl = `http://i-spy-be.herokuapp.com/games/3/2/image`
   
+  const response = {"image": tryingThis}
+  const uploadImage = async () => {axios.put(response).then((ev )=>{
+    console.log(ev)
+  })}
+  uploadImage()
+  // then reroute
+
+  
+
+
+
+  }
   return(  
     <body className="upload-body">   
       <div className="header-wrapper">
@@ -85,9 +100,10 @@ export const Upload=({games})=>{
           <div className="yellow"></div>
           <div className="image-stuff">
           <label>Upload your picture</label>
-          <img className='image' src={tryingThis}></img>
+          <img className='image' alt="uploaded submission"src={tryingThis}></img>
           <input type="file" onChange={fileSelectedHandler}></input>
-          <button>Send</button>
+          <div className="yellow"></div>
+          <button className="send-button" onClick={onSendButtonClick}>Send</button>
           </div>
         </div>
     </body> 
