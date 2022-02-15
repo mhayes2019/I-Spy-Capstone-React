@@ -34,9 +34,13 @@ function App() {
 
 
     const getPlayers = async () => {axios.get(baseurl).then((response)=>{
-      setPost(response.data)
+      setPost(response.data);
+      console.log(`Getting Players ${response.data}`);
+      console.log(response.data);
       const friendNames = post.map(a => a.name)
       const friendList = { ...friendNames }
+      console.log('friendList in getPlayers');
+      console.log(friendList);
       console.log("here friendList",friendList)
       const friendObject =Object.keys(friendList).find(key => friendList[key] === currentFirstName);
       currentUserId = parseInt(friendObject) + 1;
@@ -45,7 +49,9 @@ function App() {
     .map(function(key) {
         return friendList[key];
     });
-      setFriendNames(array)
+      setFriendNames(array);
+      console.log('Setting Friend names');
+      console.log(array);
       
     })}
 
@@ -78,7 +84,7 @@ const postGames = async () => {axios.get(gamesUrl).then((response)=>{
   getPlayers()
   postGames()
 
-  },[]);
+  },[currentFirstName, post, gamesPost]);
 
   useEffect(() => {
      const oneTime = () => forceUpdate();
