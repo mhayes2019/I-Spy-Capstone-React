@@ -7,13 +7,34 @@ padding: 15px 32px;
 text-align: center;
 text-decoration:double;
 display: inline-block;
-font-size: 16px;
+font-size: 20px;
 margin: 4px 2px;
 cursor: pointer;
+border-radius: 12px;
 }
 
 .home-wrapper{
     padding-top: 100px;
 }
+
+.gif {
+    background-image: url(/Users/dianalozano/ada/Developer/projects/I-Spy/I-Spy-Capstone-React/public/FICropped2Ispy-ClearBackgroundcopy.gif); 
+    justify-content: center;
+    width: 40vw;
+    /* height: 50vw; */
+    background-size: 45vw;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    /* position: relative; */
+
+}
+
+h1 {
+    font-size: 50px;
+}
+
 
 

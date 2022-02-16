@@ -7,15 +7,16 @@
 }
 
 .home-button{
-background-color: antiquewhite;
+border-radius: 12px;
+font-size: 25px;
 }
 
 .log-out-button{
-background-color: tomato;
 color: antiquewhite;
 width: 100px;
 padding-top: 20px;
 padding-bottom: 20px;
+border-radius: 12px;
 }
 
 h1 {
@@ -23,7 +24,9 @@ h1 {
     justify-content: center;
     background-color: antiquewhite;
     width: 20%;
+    height: 50%;
     transform: rotate(-14deg) ;
+    font-size: 100px;
 }
 
 .drop-down-space-wrapper{
@@ -33,19 +36,51 @@ h1 {
 
 .label{
     padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     background-color: antiquewhite;
-    font-weight: 700;
+    font-weight: 500;
+    border-radius: 100px;
 }
 
 .friend-select{
     background-color: antiquewhite;
+    border-radius: 12px;
+    font-size: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top:10px;
 }
 
 .start-game-button{
-    background-color: antiquewhite;
+    background-color: tomato;
     padding-top: 25px;
+    font-size: 20px;
+    border-radius: 12px;
 }
 
 .start-game-button-wrapper{
-    padding-top: 100px;
+    padding-top: 10px;
+}
+
+.input-text-box {
+    /* width: 100%; */
+    /* height: 50vw; */
+    padding: 12px 20px;
+    margin: 70px 0;
+    box-sizing: border-box;
+    border-radius: 12px;
+    font-size: 20px;
+
+}
+
+.gif {
+    background-image: url(/Users/dianalozano/ada/Developer/projects/I-Spy/I-Spy-Capstone-React/public/FICropped2Ispy-ClearBackgroundcopy.gif); 
+    justify-content: center;
+    width: 110vw;
+    height: 50vw;
+    background-size: 60vw;
+    background-repeat: no-repeat;
+    background-position: center;
 }

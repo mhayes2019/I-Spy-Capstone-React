@@ -47,22 +47,23 @@ export const Challenge=({friends})=> {
         <div className="body">
             
         <body>   
-            <h1>I SPY</h1>
+            <h1>I Spy</h1>
             <div className="drop-down-space-wrapper">
-            <label className="label">find a friend</label>
+            <label className="label">Find a Friend</label>
             <select className ="friend-select" name="find a friend" id="selectName" onChange={handleOnChangeFriends}>
               {options}
             </select>
             </div>
             <div className ="input-text-box">
-            <input type="text" name="user_email" placeholder="Type A Chararistic Here" />
+            <input type="text" name="user_email" placeholder="What should your friend look for?" />
             </div>
 
             <div className ="start-game-button-wrapper">
             <button className="start-game-button"onClick={handleCreateGame}>
-              Eye Spy With My Little Eye Something That Is
+              I Spy With My Little Eye Something That Is
             </button>
             </div>
+            <div className="gif"></div>
         </body> 
         </div>
         ) 

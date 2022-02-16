@@ -15,6 +15,7 @@ export const Home = ()=> {
     <div className="home-wrapper">
         <Link className="home-button" to="/challenge">Challenge A Friend</Link>
     </div>
+    <div class="gif"></div>
     </div>
     )
 }
