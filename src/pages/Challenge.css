@@ -76,7 +76,7 @@ h1 {
 }
 
 .gif {
-    background-image: url(/Users/dianalozano/ada/Developer/projects/I-Spy/I-Spy-Capstone-React/public/FICropped2Ispy-ClearBackgroundcopy.gif); 
+    background-image: url('../images/FICropped2Ispy-ClearBackgroundcopy.gif'); 
     justify-content: center;
     width: 110vw;
     height: 50vw;
